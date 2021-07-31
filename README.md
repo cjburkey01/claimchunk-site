@@ -1,3 +1,3 @@
 # claimchunk-site
 
-The ClaimChunk website
+The [ClaimChunk](https://github.com/cjburkey01/ClaimChunk) website.

@@ -6,12 +6,12 @@
 
 # Getting ClaimChunk
 
-* [Downloads & Snapshots](./Downloads.md)
-* [Installation Guide](./Installation.md)
+* [Downloads & Snapshots](./server/Downloads.md)
+* [Installation Guide](./server/Installation.md)
 
 ---
 
 # Using ClaimChunk
 
-* [Permissions & Setup](./Setup.md)
-* [Configuration](./Configuration.md)
+* [Permissions & Setup](./server/Setup.md)
+* [Configuration](./server/Configuration.md)

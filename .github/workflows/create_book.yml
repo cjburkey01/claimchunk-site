@@ -21,8 +21,8 @@ jobs:
           # mdbook-version: 'latest'
 
       - run: |
-        mdbook build
-        cp ./config/CNAME ./book/CNAME
+          mdbook build
+          cp ./config/CNAME ./book/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

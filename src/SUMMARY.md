@@ -15,3 +15,6 @@
 
 * [Permissions & Setup](./server/Setup.md)
 * [Configuration](./server/Configuration.md)
+  * [Main Config File](./server/MainConfigFile.md)
+  * [Max Claim Amounts](./server/RanksConfig.md)
+  * [Per-World Config](./server/WorldProfileConfigs.md)

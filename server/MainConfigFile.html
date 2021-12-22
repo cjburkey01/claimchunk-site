@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Configuration - ClaimChunk</title>
+        <title>Main Config File - ClaimChunk</title>
                 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Home.html">Home</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Getting ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Downloads.html">Downloads &amp; Snapshots</a></li><li class="chapter-item expanded "><a href="../server/Installation.html">Installation Guide</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Using ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Setup.html">Permissions &amp; Setup</a></li><li class="chapter-item expanded "><a href="../server/Configuration.html" class="active">Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/MainConfigFile.html">Main Config File</a></li><li class="chapter-item expanded "><a href="../server/RanksConfig.html">Max Claim Amounts</a></li><li class="chapter-item expanded "><a href="../server/WorldProfileConfigs.html">Per-World Config</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Home.html">Home</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Getting ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Downloads.html">Downloads &amp; Snapshots</a></li><li class="chapter-item expanded "><a href="../server/Installation.html">Installation Guide</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Using ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Setup.html">Permissions &amp; Setup</a></li><li class="chapter-item expanded "><a href="../server/Configuration.html">Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/MainConfigFile.html" class="active">Main Config File</a></li><li class="chapter-item expanded "><a href="../server/RanksConfig.html">Max Claim Amounts</a></li><li class="chapter-item expanded "><a href="../server/WorldProfileConfigs.html">Per-World Config</a></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -116,7 +116,7 @@
                                                                         <a href="https://github.com/cjburkey01/ClaimChunk" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/cjburkey01/claimchunk-site/edit/main/src/server/Configuration.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/cjburkey01/claimchunk-site/edit/main/src/server/MainConfigFile.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -145,20 +145,127 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<p>Configuration for ClaimChunk is spit up into a couple separate places.</p>
-<p>For global ClaimChunk configurations, the <a href="./MainConfigFile.html"><code>config.yml</code> page</a> explains what can be configured.</p>
-<p>If you need some users to have a different maximum claim limit than others, check out the <a href="./RanksConfig.html">rank config page</a> to see how to implement this.</p>
+                        <h1 id="main-config-file"><a class="header" href="#main-config-file">Main Config File</a></h1>
+<p>The standard 0.0.23 configuration file looks like this:</p>
+<pre><code class="language-yml">basic:
+  # When set to true, permissions will be granted such that OPs are admins and
+  # non-OPs have claimchunk.player
+  disablePermissions: false
+  # Whether to check for an update available in the GitHub releases. Set to
+  # false to disable
+  checkForUpdates: true
+
+log:
+  # When enabled, extra debug information is printed in the console and
+  # labelled as DEBUG.
+  debugSpam: false
+  # When enabled, allow ClaimChunk to send information to bStats.org for
+  # statistics collection. You aren't tracked, but you're free to disable this
+  # if you please.
+  anonymousMetrics: true
+
+titles:
+  # When enabled, ClaimChunk will send a majority of notifications to users via
+  # the action bar or subtitle bar.
+  useTitlesInsteadOfChat: true
+  # Whether to send messages to the action bar instead of the subtitle bar.
+  # Note: This may become per-player (and make this option obsolete) in the
+  #       future.
+  useActionBar: true
+  # Number of ticks to fade in the title (20 ticks = 1 second)
+  titleFadeInTime: 20
+  # Number of ticks for title to stay on screen (20 ticks = 1 second)
+  titleStayTime: 140
+  # Number of ticks to fade out the title (20 ticks = 1 second)
+  titleFadeOutTime: 20
+
+colors:
+  # Option for setting the info color of chat messages.
+  # Note: This will be obsolete in the future with the message overhaul.
+  infoColor: GOLD
+    # Option for setting the error color of chat messages.
+    # Note: This will be obsolete in the future with the message overhaul.
+  errorColor: RED
+
+chunks:
+  # The default maximum number of chunks a player may claim for themselves.
+  # When set to -1, players may claim as many chunks as would like.
+  # This option is override by the rank permission maximums granted.
+  maxChunksClaimed: 50
+  # Whether to display particles when a player claims a chunk.
+  # This may also become obsolete if players have more configuration options.
+  particlesWhenClaiming: true
+  # Whether to allow players who are not visible to the owning player to bypass
+  # the `/chunk alert` settings players may have enabled.
+  hideAlertsForVanishedPlayers: true
+  # How long (in seconds) a player must be offline before their chunk is marked
+  # as unclaimed again. If this is -1, chunks won't be unclaimed automatically.
+  automaticUnclaimSeconds: -1
+  # How frequently ClaimChunk should check for claimed chunks with players who
+  # have been offline for the `automaticUnclaimSeconds` amount of time.
+  unclaimCheckIntervalTicks: 1200
+  # Whether to show when players enter/exit claimed or unclaimed chunks.
+  displayNameOfOwner: true
+
+  # TODO:
+  defaultSendAlertsToOwner: true
+  maxPerListPage: 5
+  disabledWorlds: []
+  nearChunkSearch: 5
+  maxScanRange: 20
+
+chunkOutline:
+  name: 'SMOKE_LARGE'
+  durationSeconds: 5
+  spawnsPerSecond: 2
+  particlesPerSpawn: 2
+  heightRadius: 3
+
+worldguard:
+  allowClaimsInRegionsByDefault: true
+  allowClaimingInNonGuardedWorlds: true
+  allowAdminOverride: true
+
+economy:
+  useEconomy: true
+  claimPrice: 100.0
+  unclaimReward: 10.0
+  firstFreeChunks: 0
+
+data:
+  saveDataIntervalInMinutes: 10
+  keepJsonBackups: true
+  minBackupIntervalInMinutes: 120
+  deleteOldBackupsAfterMinutes: 10080
+
+database:
+  useDatabase: false
+  groupRequests: true
+  convertOldData: true
+  hostname: '127.0.0.1'
+  port: 3306
+  database: 'MyServer'
+  username: 'root'
+  password: 'root'
+  printDebug: false
+  useSsl: false
+  allowPublicKeyRetrieval: false
+
+floodclaim:
+  enabled: true
+  maximumIterations: 6
+  maximumArea: 41
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="../server/Setup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="../server/Configuration.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="../server/MainConfigFile.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="../server/RanksConfig.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -168,11 +275,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="../server/Setup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="../server/Configuration.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="../server/MainConfigFile.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="../server/RanksConfig.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>

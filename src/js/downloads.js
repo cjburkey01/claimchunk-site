@@ -24,11 +24,8 @@ window.onload = function() {
         let snapshot_artifacts_promise = fetch(snapshot_artifacts_endpoint).then(response => response.json());
         let snapshot_commits_promise = fetch(snapshot_commits_endpoint)
             .then(response => response.json())
-            .then(data => {
-                let d = data.reduce((commitMap, commit) => commitMap.set(commit.sha, { message: commit.commit.message, date: new Date(commit.commit.author.date) }), new Map());
-                console.log(d);
-                return d;
-            });
+            .then(data
+                => data.reduce((commitMap, commit) => commitMap.set(commit.sha, { message: commit.commit.message, date: new Date(commit.commit.author.date) }), new Map()));
 
         // Use them both
         Promise
@@ -145,7 +142,6 @@ function populate_snapshot_downloads(artifactData, commitData, snapshot_download
         let artifactCommitDateDiff = Number.MAX_SAFE_INTEGER - 10;  // Big num
         let correctDescription = '-';
         commitData.forEach((commit, sha, map) => {
-            console.log(commit);
             let dateDiff = Math.abs(artifactDate.getTime() - commit.date.getTime());
             if (dateDiff < artifactCommitDateDiff) {
                 artifactCommitDateDiff = dateDiff;

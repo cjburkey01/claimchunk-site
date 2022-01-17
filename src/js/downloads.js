@@ -24,8 +24,7 @@ window.onload = function() {
         let snapshot_artifacts_promise = fetch(snapshot_artifacts_endpoint).then(response => response.json());
         let snapshot_commits_promise = fetch(snapshot_commits_endpoint)
             .then(response => response.json())
-            .then(data
-                => data.reduce((commitMap, commit) => commitMap.set(commit.sha, { message: commit.commit.message, date: new Date(commit.commit.author.date) }), new Map()));
+            .then(data => data.reduce((commitMap, commit) => commitMap.set(commit.sha, { message: commit.commit.message, date: new Date(commit.commit.author.date) }), new Map()));
 
         // Use them both
         Promise

@@ -184,47 +184,6 @@ economy:
 <h2 id="placeholderapi"><a class="header" href="#placeholderapi">PlaceholderAPI</a></h2>
 <p>ClaimChunk supports the usage of placeholders within its messages (which can be configured in the <code>messages.json</code> file in the <code>plugins/ClaimChunk</code> directory) as well as provides a <a href="./Placeholders.html">couple placeholders</a> for your use.</p>
 <p>Make sure to have <a href="https://www.spigotmc.org/resources/placeholderapi.6245/">PlaceholderAPI</a> installed for your server and ClaimChunk will automatically hook itself in. Please see the <a href="./Placeholders.html">Placeholders</a> page for more information on how to use them.</p>
-<h2 id="mysql-setup"><a class="header" href="#mysql-setup">MySQL Setup</a></h2>
-<p>ClaimChunk has support to use MySQL as its main data handler for players who have joined and chunks that have been claimed. All you need to do to enable this functionality is configure it within the <code>database</code> section of the config:</p>
-<pre><code class="language-yml"># -- more config up here --
-
-database:
-  useDatabase: true     # Set this to `true` to enable the database.
-
-  groupRequests: true   # Set to `true` for slow MySQL servers that may take a
-                        # couple milliseconds (or more) to keep the
-                        # server from waiting during every request!!
-
-  convertOldData: true  # Leave at `true` TO CONVERT JSON DATA TO THE DATABASE.
-                        # AFTER RUNNING, IT CAN BE SET BACK TO `false`.
-
-  hostname: 127.0.0.1   # IP address or hostname for the server. It can be either.
-
-  port: 3306            # Many MySQL servers default to this port, but hosted
-                        # ones may use a different one. Make sure to check with
-                        # your database provider if this is the case.
-
-  database: MyServer    # The name of the database to use.
-
-  username: root        # Username to use to access the database.
-
-  password: root        # Password to use to access the database.
-
-  printDebug: false     # If set to `true`, ClaimChunk will print the calls it
-                        # makes to the database, which may be useful for
-                        # debugging. Using this may require the `debugSpam` option
-                        # under the `log` section of the config to be `true`.
-
-  useSsl: false         # Whether to use SSL security when accessing the database.
-                        # You're welcome to try setting this to true and seeing
-                        # how it works, I think it depends on your database provider.
-
-  allowPublicKeyRetrieval: false  # Enabling/disabling may fix a warning/error.
-                                  # This is likely not necessary for most server
-                                  # owners to mess with, but it's here just in case.
-
-# -- more config down here --
-</code></pre>
 
                     </main>
 

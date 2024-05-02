@@ -10,7 +10,6 @@ description = "A site detailing how to use the SpigotAPI plugin ClaimChunk"
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/cjburkey01/ClaimChunk"
 edit-url-template = "https://github.com/cjburkey01/claimchunk-site/edit/main/{path}"
-additional-js = ["src/js/downloads.js"]
 additional-css = ["src/css/downloads.css"]
 no-section-label = true
 

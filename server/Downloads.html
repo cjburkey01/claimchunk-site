@@ -146,15 +146,34 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="downloads"><a class="header" href="#downloads">Downloads</a></h1>
+<script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+<script>
+document.body.addEventListener('htmx:configRequest', function(event) {
+    event.detail.headers = ''
+    event.detail.headers['Content-Type'] = "application/x-www-form-urlencoded; charset=UTF-8"
+});
+</script>
 <p>There are two channels from which to download ClaimChunk. The release channel is the current stable version of ClaimChunk. This version <em>should</em> be safe to use for larger servers. The snapshot channel, however, provides a new build for the changes to the <a href="https://github.com/cjburkey01/ClaimChunk">ClaimChunk repository</a> since the latest release. This means they may have less testing, but it may be useful if bugs exist in the latest release or you want some features that have yet to be pushed to a release.</p>
-<p>If you need help installing, please see the <a href="./Installation.html">Installation page</a>, which outlines the whole installation process and immediate configurations that can be done.</p>
 <h2 id="release-downloads"><a class="header" href="#release-downloads">Release Downloads</a></h2>
 <p>The following downloads are considered stable downloads, or releases.</p>
-<div id="release_downloads"><i>Please wait... &verbar; Loading...</i></div>
+<div
+    hx-get="https://cjburkey.com/claimchunk-api/releases.php"
+    hx-trigger="load"
+    hx-swap="innerHTML"
+>
+    <i>Please wait... &verbar; Loading...</i>
+</div>
 <h2 id="snapshot-downloads"><a class="header" href="#snapshot-downloads">Snapshot Downloads</a></h2>
 <p>These downloads <em>might</em> be less stable than the release downloads, but have more recent features and bug fixes.</p>
 <p>To make these downloads available, we use a handy-dandy link service called <a href="https://nightly.link/" target="_blank" title="nightly.link GitHub link service">nightly.link</a> to make getting GitHub artifact download links possible.</p>
-<div id="snapshot_downloads"><i>Please wait... &verbar; Loading...</i></div>
+<p>After 30 days, GitHub deletes these artifacts; if you want to compile an older, non-release version that isn't listed here, please clone the repository at the preferred commit and build from source.</p>
+<div
+    hx-get="https://cjburkey.com/claimchunk-api/artifacts.php"
+    hx-trigger="load"
+    hx-swap="innerHTML"
+>
+    <i>Please wait... &verbar; Loading...</i>
+</div>
 
                     </main>
 

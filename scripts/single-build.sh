@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-set -Eeuo pipefail
-
 # Usage: single-build.sh <book-lang> <dest-dir>
 
 book_lang=${1:?"Usage: $0 <book-lang> <dest-dir>"}

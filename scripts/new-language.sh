@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-set -Eeuo pipefail
-
 # Usage: new-language.sh <2ish character identifier>
 
 lang=${1:?"Usage: $0 <language identifier>"}

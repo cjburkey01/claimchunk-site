@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Usage: update-language.sh <2ish character identifier>
 
 lang=${1:?"Usage: $0 <language identifier>"}

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script will build the main English website as well as the website for
 # other languages inside the `po` directory.
 

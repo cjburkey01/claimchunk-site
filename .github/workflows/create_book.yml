@@ -1,7 +1,7 @@
 name: github pages
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,13 +24,17 @@ jobs:
 
       - name: Install mdbook
         uses: taiki-e/cache-cargo-install-action@v2
+        # noinspection YAMLSchemaValidation
+        locked: false
         with:
-          tool: mdbook@0.4.40
+          tool: mdbook
 
       - name: Install mdbook-i18n-helpers
         uses: taiki-e/cache-cargo-install-action@v2
+        # noinspection YAMLSchemaValidation
+        locked: false
         with:
-          tool: mdbook-i18n-helpers@0.3.4
+          tool: mdbook-i18n-helpers
 
       - name: Build the book
         run: sh scripts/full-build.sh
@@ -43,4 +47,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: book/
+          publish_dir: ./book

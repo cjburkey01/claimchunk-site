@@ -8,8 +8,13 @@ echo "Building English"
 sh scripts/single-build.sh en book/
 
 # Build the rest
-shopt -s nullglob
 for lang in po/*.po; do
+  # Make sure the file exists.
+  # `shopt -s nullglob` isn't working with GitHub Actions :/
+  if ! test -f $lang; then
+    continue
+  fi
+
   # Filename
   b=$(basename -- "$lang")
   # Without extension

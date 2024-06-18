@@ -25,24 +25,22 @@ jobs:
       - name: Install mdbook
         uses: taiki-e/cache-cargo-install-action@v2
         with:
-          tool: mdbook
+          tool: mdbook@0.4.40
 
       - name: Install mdbook-i18n-helpers
         uses: taiki-e/cache-cargo-install-action@v2
         with:
-          tool: mdbook-i18n-helpers
+          tool: mdbook-i18n-helpers@0.3.4
 
       - name: Build the book
         run: sh scripts/full-build.sh
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: book
+      - name: Copy CNAME
+        run: cp config/CNAME book/CNAME
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: book/

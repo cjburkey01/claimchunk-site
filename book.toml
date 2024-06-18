@@ -4,14 +4,19 @@ language = "en"
 multilingual = false
 src = "src"
 title = "ClaimChunk"
-description = "A site detailing how to use the SpigotAPI plugin ClaimChunk"
+
+[preprocessor.gettext]
+after = ["links"]
+
+[build]
+extra-watch-dirs = ["po"]
 
 [output.html]
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/cjburkey01/ClaimChunk"
 edit-url-template = "https://github.com/cjburkey01/claimchunk-site/edit/main/{path}"
 additional-js = []
-additional-css = ["src/css/downloads.css"]
+additional-css = ["src/css/downloads.css", "src/css/language-picker.css"]
 no-section-label = true
 
 [output.html.print]

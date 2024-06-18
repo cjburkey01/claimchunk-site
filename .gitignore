@@ -1,5 +1,12 @@
+# IDEA
+**.iml
+.idea/
+
 # mdbook output
 book
 
 # Mac
 **.DS_Store
+
+# I18N
+po/messages.pot

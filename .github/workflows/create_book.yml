@@ -9,24 +9,31 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: '0.4.12'
-          # mdbook-version: 'latest'
+      - name: Install gettext
+        run: |
+          sudo apt update
+          sudo apt install gettext
 
-      - run: |
-          mdbook build
-          cp ./config/CNAME ./book/CNAME
+      - name: Install mdbook
+        run: cargo install mdbook
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Install mdbook-i18n-helpers
+        run: cargo install mdbook-i18n-helpers
+
+      - name: Build the book
+        run: sh scripts/full-build.sh
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+          path: book
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -16,7 +16,7 @@ preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/cjburkey01/ClaimChunk"
 edit-url-template = "https://github.com/cjburkey01/claimchunk-site/edit/main/{path}"
 additional-js = []
-additional-css = ["src/css/downloads.css", "src/css/language-picker.css"]
+additional-css = ["css/downloads.css", "css/language-picker.css"]
 no-section-label = true
 
 [output.html.print]

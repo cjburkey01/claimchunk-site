@@ -1,6 +1,13 @@
+<!-- i18n:skip -->
 # Summary
 
 [Home](./Home.md)
+
+---
+
+# For Players
+
+* [Commands](./player/Commands.md)
 
 ---
 

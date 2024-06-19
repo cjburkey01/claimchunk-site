@@ -72,7 +72,3 @@ To generate the translations and build the book, you can run:
 ```bash
 sh scripts/single-build.sh <FEW_LETTER_LANG_IDENTIFER> <OUTPUT_DIR>
 ```
-Instead of running that script, you can also simply serve the content using `mdbook serve`, like so (replace XX with your language code):
-```bash
-MDBOOK_BOOK__LANGUAGE="XX" mdbook serve
-```

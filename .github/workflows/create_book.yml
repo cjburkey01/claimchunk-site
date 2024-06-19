@@ -26,14 +26,14 @@ jobs:
         uses: taiki-e/cache-cargo-install-action@v2
         with:
           locked: false
-          tool: mdbook
+          tool: mdbook@0.4.40
 
       - name: Install mdbook-i18n-helpers
         uses: taiki-e/cache-cargo-install-action@v2
         # noinspection YAMLSchemaValidation
         with:
           locked: false
-          tool: mdbook-i18n-helpers
+          tool: mdbook-i18n-helpers@0.3.4
 
       - name: Build the book
         run: sh scripts/full-build.sh

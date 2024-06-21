@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Commands - ClaimChunk</title>
+        <title>For Players - ClaimChunk</title>
 
 
         <!-- Custom HTML head -->
@@ -13,29 +13,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../css/downloads.css">
-        <link rel="stylesheet" href="../css/language-picker.css">
+        <link rel="stylesheet" href="css/downloads.css">
+        <link rel="stylesheet" href="css/language-picker.css">
 
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../";
+            var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
         </script>
 
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Home.html">Home</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">For Players</li><li class="chapter-item expanded "><a href="../player/Commands.html" class="active">Commands</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Getting ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Downloads.html">Downloads & Snapshots</a></li><li class="chapter-item expanded "><a href="../server/Installation.html">Installation Guide</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Using ClaimChunk</li><li class="chapter-item expanded "><a href="../server/Setup.html">Permissions & Setup</a></li><li class="chapter-item expanded "><a href="../server/Configuration.html">Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../server/MainConfigFile.html">Main Config File</a></li><li class="chapter-item expanded "><a href="../server/RanksConfig.html">Max Claim Amounts</a></li><li class="chapter-item expanded "><a href="../server/WorldProfileConfigs.html">Per-World Config</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Home.html">Home</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Getting ClaimChunk</li><li class="chapter-item expanded "><a href="server/Downloads.html">Downloads & Snapshots</a></li><li class="chapter-item expanded "><a href="server/Installation.html">Installation Guide</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Using ClaimChunk</li><li class="chapter-item expanded "><a href="ForPlayers.html" class="active">For Players</a></li><li class="chapter-item expanded "><a href="server/Setup.html">Permissions & Setup</a></li><li class="chapter-item expanded "><a href="server/Configuration.html">Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="server/MainConfigFile.html">Main Config File</a></li><li class="chapter-item expanded "><a href="server/RanksConfig.html">Max Claim Amounts</a></li><li class="chapter-item expanded "><a href="server/WorldProfileConfigs.html">Per-World Config</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,10 +141,10 @@
 
                             // The path to the root, taking the current
                             // language into account.
-                            let full_path_to_root = "../";
+                            let full_path_to_root = "";
                             // The page path (mdbook only gives us
                             // access to the path to the Markdown file).
-                            let path = "player/Commands.md".replace(/\.md$/, ".html");
+                            let path = "ForPlayers.md".replace(/\.md$/, ".html");
                             for (let lang of langList.querySelectorAll("a")) {
                                 if (lang.id == "en") {
                                     lang.href = `${full_path_to_root}${path}`;
@@ -168,7 +168,7 @@
                         <a href="https://github.com/cjburkey01/ClaimChunk" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/cjburkey01/claimchunk-site/edit/main/src/player/Commands.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/cjburkey01/claimchunk-site/edit/main/src/ForPlayers.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -197,18 +197,56 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="commands-for-players"><a class="header" href="#commands-for-players">Commands for Players</a></h1>
-<p>TODO!</p>
+                        <h1 id="for-players"><a class="header" href="#for-players">For Players</a></h1>
+<p>If at any point you need in-game advice, the <code>/chunk help</code> command lists
+other commands you have access to on your server, though they are not the
+easiest to read in that form.</p>
+<p>If you want to avoid using commands, most common operations can be performed
+in the GUI, accessible via the <code>/chunk gui</code> command.</p>
+<h3 id="claiming-and-unclaiming"><a class="header" href="#claiming-and-unclaiming">Claiming and Unclaiming</a></h3>
+<p>Unsurprisingly, <code>/chunk claim</code> and <code>/chunk unclaim</code> work how they sound.
+If your server has economy support enabled, you'll need to have enough money to
+claim. When unclaiming a chunk, your server may also have refunding enabled,
+which will return some amount of money.</p>
+<p>To unclaim all chunks in the world you're standing in, use
+<code>/chunk unclaim all</code>. To unclaim all of your chunks in all worlds, use
+<code>/chunk unclaim all true</code>.</p>
+<p>If your server has auto-claiming enabled, you can use <code>/chunk auto</code> to start
+automatically claiming chunks you walk into, provided that they aren't already
+claimed and you have enough money to make the purchase.</p>
+<h3 id="chunk-info"><a class="header" href="#chunk-info">Chunk Info</a></h3>
+<p>You can use <code>/chunk list</code> to view a list of the chunks you own, and
+<code>/chunk info</code> to see information about the chunk you're currently standing in.</p>
+<p>You can use <code>/chunk name</code> to set/reset your chunk's display name in other
+player's on-screen popups. If you type <code>/chunk name &lt;new name&gt;</code>, the name will be
+updated; if you don't provide a name, the display name will be reset and your
+in-game player name will be shown.</p>
+<p>To show an outline around the chunk you're standing in, use <code>/chunk show</code>, and
+to outline nearby claimed chunks, use <code>/chunk show claimed</code></p>
+<p>If you would like to see a list of nearby chunks that are owned by other
+players, you can use <code>/chunk scan &lt;distance in chunks&gt;</code></p>
+<h3 id="permissions-and-other-players"><a class="header" href="#permissions-and-other-players">Permissions and Other Players</a></h3>
+<p>Similar to plugins like <em>Factions</em>, you can control what other players
+are allowed to do in your chunks. To set which permissions that players will
+have in your chunks, you can use <code>/chunk default access &lt;flags&gt;</code>. If you want
+to set how players can interact with a specific chunk, you can use
+<code>/chunk default access here &lt;flags&gt;</code> to change access flags for the chunk
+you're currently standing in. If you want to control how a specific player can
+access a specific chunk, use <code>/chunk access &lt;player name&gt; &lt;flags&gt;</code> while
+standing in that chunk.</p>
+<p>You can give a specific claimed chunk to another player by using
+<code>/chunk give &lt;player name&gt;</code> to transfer ownership of the chunk you're standing
+in.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Home.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="server/Installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../server/Downloads.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="server/Setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -218,11 +256,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Home.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="server/Installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../server/Downloads.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="server/Setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -237,13 +275,13 @@
         </script>
 
 
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
 

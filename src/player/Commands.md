@@ -1,3 +1,0 @@
-# Commands for Players
-
-TODO!

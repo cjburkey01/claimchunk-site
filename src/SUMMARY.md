@@ -5,12 +5,6 @@
 
 ---
 
-# For Players
-
-* [Commands](./player/Commands.md)
-
----
-
 # Getting ClaimChunk
 
 * [Downloads & Snapshots](./server/Downloads.md)
@@ -20,6 +14,7 @@
 
 # Using ClaimChunk
 
+* [For Players](./ForPlayers.md)
 * [Permissions & Setup](./server/Setup.md)
 * [Configuration](./server/Configuration.md)
   * [Main Config File](./server/MainConfigFile.md)

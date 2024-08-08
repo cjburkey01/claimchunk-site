@@ -1,7 +1,7 @@
 <!-- i18n:skip -->
 # Summary
 
-[Home](./Home.md)
+[Home](./README.md)
 
 ---
 

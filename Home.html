@@ -145,7 +145,7 @@
                             let full_path_to_root = "";
                             // The page path (mdbook only gives us
                             // access to the path to the Markdown file).
-                            let path = "index.md".replace(/\.md$/, ".html");
+                            let path = "Home.md".replace(/\.md$/, ".html");
                             for (let lang of langList.querySelectorAll("a")) {
                                 if (lang.id == "en") {
                                     lang.href = `${full_path_to_root}${path}`;
